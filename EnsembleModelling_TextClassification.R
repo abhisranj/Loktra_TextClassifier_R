@@ -126,11 +126,11 @@ write.csv(Output_Just_Class_Predictions, "Output_Predictions.csv")
 # CALCULATING ACCURACY USING CAONFUSION MATRIX
 require(caret)
 confusionMatrix(Final_Submission$Class,Final_Submission$Prediction)
-
+# Accuracy from Consusion Matrix is 98.83% (64 Incorrect Prediction out of 5485)
 
 # CALCULATING ACCURACY USING LOKTRA'S STATED MECHANISM
-# Accuracy_Scoring_Meachanism_LOKTRA = [(Correctly Classified - Incorrectly Classified)/Total] = 97.66% using Ensemble Agreement
-## ACCURACY IS 97.66% ##
+# Accuracy_Scoring_Meachanism_LOKTRA = [(Correctly Classified - Incorrectly Classified)/Total] = 97.66 using Ensemble Agreement
+## ACCURACY IS 97.66 ##
 cm = as.matrix(table(Actual = Final_Submission$Class, Predicted = Final_Submission$Prediction))
 Score <- (sum(diag(cm)) - (sum(cm)-sum(diag(cm))))/sum(cm)
 Score
